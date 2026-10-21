@@ -15,15 +15,20 @@ const MOBILE = () => innerWidth / innerHeight < 0.8;
 
 // ─── Engine ───────────────────────────────────────────────────────────────────
 const canvas = document.getElementById('gl');
+// Perf (demo tuning): phones and small screens render at DPR 1 — the post
+// stack costs scale with pixels, and 1.25+ on a phone GPU is what made
+// scrolling feel heavy. Desktop keeps the crisp 1.25.
+const IS_SMALL = matchMedia('(pointer: coarse)').matches || innerWidth < 900;
+const DPR = IS_SMALL ? 1 : 1.25;
 let dof = null;
 const engine = new Engine({
-  canvas, fov: 30, near: 0.05, far: 120, dpr: 1.25, background: 0x0b0b0f,
+  canvas, fov: 30, near: 0.05, far: 120, dpr: DPR, background: 0x0b0b0f,
   post: {
     tone: 'neutral',
-    ao: { aoRadius: 0.16, intensity: 2.1, distanceFalloff: 1.1 },
+    ao: { aoRadius: 0.16, intensity: 2.1, distanceFalloff: 1.1, aoSamples: 8 },
     bloom: { intensity: 0.55, luminanceThreshold: 1.3, luminanceSmoothing: 0.25, radius: 0.62 },
     vignette: false, noise: 0.022, ca: 0.0005,
-    pre: cam => (Q.has('nodof') ? [] : [(dof = new DepthOfFieldEffect(cam, { focusDistance: 8, focusRange: 3, bokehScale: 0, resolutionScale: 0.5 }))]),
+    pre: cam => (Q.has('nodof') || IS_SMALL ? [] : [(dof = new DepthOfFieldEffect(cam, { focusDistance: 8, focusRange: 3, bokehScale: 0, resolutionScale: 0.35 }))]),
   },
 });
 const { scene, camera, renderer } = engine;
@@ -60,7 +65,7 @@ backdrop.frustumCulled = false; backdrop.renderOrder = -10;
 scene.add(backdrop);
 engine.onResize((w, h, dpr) => backdrop.material.uniforms.uRes.value.set(w * dpr, h * dpr));
 
-const shadow = new ContactShadow(renderer, scene, { width: 18, depth: 11, y: -2.75, res: 512, far: 5.2, blur: 3.4, opacity: 0.55 });
+const shadow = new ContactShadow(renderer, scene, { width: 18, depth: 11, y: -2.75, res: 384, far: 5.2, blur: 3.4, opacity: 0.55 });
 shadow.hidden.push(backdrop);
 
 // ─── Loader ──────────────────────────────────────────────────────────────────
@@ -73,7 +78,7 @@ const loaderEl = document.querySelector('.loader');
 }
 let buildP = 0;
 const loader = preloader({
-  assets, el: loaderEl, minTime: 1500,
+  assets, el: loaderEl, minTime: 650,
   onValue: v => { const p = Math.min(v * 0.75 + buildP * 0.25, 1); loaderEl.style.setProperty('--p', p); loaderEl.querySelector('.loader-n').textContent = Math.round(p * 72); },
   exit: () => gsap.timeline()
     .to('.loader-gauge', { scale: 1.08, duration: 0.5, ease: 'power2.out' })
