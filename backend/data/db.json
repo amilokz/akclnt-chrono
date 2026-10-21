@@ -1,0 +1,60 @@
+{
+  "watches": [
+    {
+      "id": "akclnt-bridge-001",
+      "name": "AKCLNT Chrono \u2014 Golden Bridge Skeleton Automatic",
+      "price": 24999,
+      "description": "Oval skeleton case with the movement on full display. Self-winding automatic calibre, stainless band (20\u201324mm, 23cm), 3Bar water resistance for daily wear \u2014 splashes and light rain are fine.",
+      "category": "Men's",
+      "stock": 12,
+      "photos": [
+        "/uploads/1791645305245-86702324.jpg",
+        "/uploads/1791645305249-687575237.jpg",
+        "/uploads/1791645305251-421358443.jpg",
+        "/uploads/1791645305253-932930852.jpg",
+        "/uploads/1791645305254-747146872.jpg"
+      ],
+      "dateAdded": "2026-10-21T00:00:00.000Z"
+    },
+    {
+      "id": "akclnt-olevs-002",
+      "name": "AKCLNT Chrono \u2014 Dual Calendar Automatic (OLEVS 9910)",
+      "price": 27499,
+      "description": "Automatic mechanical movement with a full calendar and week display. Stainless case (13mm thick) and band, luminous hands, coated scratch-resistant glass, 3Bar water resistance.",
+      "category": "Men's",
+      "stock": 15,
+      "photos": [
+        "/uploads/1791984704837-223342123.jpg",
+        "/uploads/1791984704839-328664488.jpg",
+        "/uploads/1791984704839-338718163.jpg",
+        "/uploads/1791984704839-547213586.jpg"
+      ],
+      "dateAdded": "2026-10-21T00:00:00.000Z"
+    },
+    {
+      "id": "ak01-n",
+      "name": "AKCLNT Chrono \u2014 Midnight Skeleton Tourbillon AK-01 N",
+      "price": 185000,
+      "description": "The AK-01 in deep navy: skeleton tourbillon, champagne-gold bridges, 72-hour reserve. Allocation only \u2014 message us on WhatsApp to reserve.",
+      "category": "AK-01 Series",
+      "stock": 6,
+      "photos": [
+        "/img/chrono/midnight-macro.webp"
+      ],
+      "dateAdded": "2026-10-21T00:00:00.000Z"
+    },
+    {
+      "id": "ak01-g",
+      "name": "AKCLNT Chrono \u2014 Sovereign Gold Automatic AK-01 G",
+      "price": 215000,
+      "description": "The flagship AK-01 reference in champagne gold on a hand-stitched tan leather strap. Allocation only \u2014 message us on WhatsApp to reserve.",
+      "category": "AK-01 Series",
+      "stock": 4,
+      "photos": [
+        "/img/chrono/sovereign-wrist.webp"
+      ],
+      "dateAdded": "2026-10-21T00:00:00.000Z"
+    }
+  ],
+  "orders": []
+}

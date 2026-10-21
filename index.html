@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AKCLNT CHRONO | Time, Engineered</title>
+  <meta name="description" content="AKCLNT CHRONO by AKCLNT Studio — a cinematic 3D watch experience. Take the AK-01 movement apart on scroll, explore the collection and order on WhatsApp.">
+  <meta name="theme-color" content="#060D1F">
+  <meta property="og:title" content="AKCLNT CHRONO | Time, Engineered">
+  <meta property="og:description" content="A cinematic 3D watch store by AKCLNT Studio — scroll to take the AK-01 movement apart.">
+  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22%23060D1F%22 stroke=%22%23C9A227%22 stroke-width=%222%22/%3E%3Cpath d=%22M16 5v22M6.5 10.5l19 11M6.5 21.5l19-11%22 stroke=%22%23E6C66A%22 stroke-width=%221.4%22/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <div class="loader" role="status" aria-live="polite">
+    <svg class="loader-gauge" viewBox="0 0 200 200" aria-hidden="true">
+      <circle class="lg-track" cx="100" cy="100" r="86"/>
+      <circle class="lg-fill" cx="100" cy="100" r="86"/>
+      <g class="lg-ticks"></g>
+      <g class="lg-balance">
+        <circle cx="100" cy="100" r="34" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M100 66V134M70.6 83L129.4 117M70.6 117L129.4 83" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="100" cy="100" r="4" fill="currentColor"/>
+      </g>
+      <path class="lg-spring" d="M100 100m0-6a6 6 0 1 1-6 6a9 9 0 1 1 9 9a12 12 0 1 1-12-12a15 15 0 1 1 15 15a18 18 0 1 1-18-18" fill="none" stroke="currentColor" stroke-width=".8"/>
+    </svg>
+    <p class="loader-h"><span class="loader-n">0</span><small>h</small></p>
+    <p class="loader-line caps">Winding the mainspring</p>
+  </div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="AKCLNT CHRONO — home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11.5" fill="none" stroke="currentColor" stroke-width="1"/><path d="M16 4.5v23M6 10.2l20 11.6M6 21.8l20-11.6" stroke="currentColor" stroke-width=".7"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/></svg>
+      <span class="brand-name">AKCLNT</span>
+      <span class="brand-sub caps">Chrono · By AKCLNT Studio</span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#calibre">Explore Watch</a>
+      <a href="#finishing">Watch Details</a>
+      <a href="#collection">Our Collection</a>
+      <a href="shop.html">Shop</a>
+      <a href="#atelier">About Us</a>
+    </nav>
+    <div class="nav-r">
+      <button class="sound caps" type="button" aria-pressed="true" data-cursor="link"><i></i><span>Sound</span></button>
+      <a class="btn btn-line" href="#appointment" data-magnetic>Request an appointment</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero-inner">
+        <p class="eyebrow caps">Calibre AK-01 &nbsp;·&nbsp; Skeleton tourbillon &nbsp;·&nbsp; AKCLNT Studio</p>
+        <h1 class="hero-title"><span class="ln">Time,</span><span class="ln">Engineered.</span><span class="ln"><em>In Gold &amp; Navy.</em></span></h1>
+        <p class="hero-lede">AKCLNT CHRONO is a watch store you can take apart. Scroll, and the AK-01 opens layer by layer — every gear turning at its true ratio, live on your screen.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#appointment" data-magnetic>Shop Collection</a>
+          <a class="btn-text caps" href="#calibre">Explore in 3D <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <dl class="hero-spec caps">
+        <div><dt>Design</dt><dd>Navy &amp; Champagne Gold</dd></div>
+        <div><dt>Style</dt><dd>Modern Swiss Silhouette</dd></div>
+        <div><dt>Collection</dt><dd>AK-01 Series</dd></div>
+      </dl>
+      <p class="hint caps" aria-hidden="true"><span class="hint-dot"></span>Move to tilt the watch &nbsp;·&nbsp; scroll to open it up</p>
+
+    </section>
+
+    <section class="calibre" id="calibre" aria-label="The calibre, exploded">
+      <div class="stage">
+        <article class="step" data-k="1">
+          <p class="fig caps">Fig. I &nbsp;—&nbsp; The case, opened</p>
+          <h2>Strip the case away, and what remains is <em>pure engineering.</em></h2>
+          <p>AK-01 is a hand-wound skeleton tourbillon built from 211 parts and 31 jewels — nothing tucked behind a dial. Keep scrolling and we dismantle it in the exact order it was assembled.</p>
+        </article>
+        <article class="step" data-k="2">
+          <p class="fig caps">Fig. II &nbsp;—&nbsp; Exploded along the axis</p>
+          <h2>Twelve layers. <em>6.1 millimetres thin.</em></h2>
+          <p>Sapphire, hands, chapter ring, bridges, winding works, going train, tourbillon, barrel, mainplate, case. Each wheel turns at its real-world ratio — and the hands are telling your time, right now.</p>
+          <ul class="spec caps"><li><b>32.4</b> mm calibre</li><li><b>31</b> jewels</li><li><b>211</b> parts</li></ul>
+        </article>
+        <article class="step" data-k="3">
+          <p class="fig caps">Fig. III &nbsp;—&nbsp; Energy</p>
+          <h2>Hold the crown. <em>Feel it wind.</em></h2>
+          <p>Inside the drum sits 42 centimetres of coiled mainspring. Every turn of the crown tensions it around the arbor while the click holds it from unwinding. Thirty turns, three full days of power.</p>
+          <p class="step-hint caps"><span class="hint-dot"></span>Press and hold the crown, or the gauge</p>
+        </article>
+        <article class="step" data-k="4">
+          <p class="fig caps">Fig. IV &nbsp;—&nbsp; Transmission</p>
+          <h2>Four wheels turn days <em>into seconds.</em></h2>
+          <p>The barrel completes one turn in eight hours. The centre wheel turns hourly and carries the minute hand. The third wheel multiplies the speed again, until the tourbillon cage rotates exactly once per minute.</p>
+          <ul class="spec caps"><li><b>96 : 12</b> barrel</li><li><b>80 : 10</b> centre</li><li><b>75 : 10</b> third</li></ul>
+        </article>
+        <article class="step" data-k="5">
+          <p class="fig caps">Fig. V &nbsp;—&nbsp; Regulation &nbsp;·&nbsp; shown at ⅒ speed</p>
+          <h2>Eight beats a second, <em>it lets go.</em></h2>
+          <p>The pallet fork frees the escape wheel half a tooth at a time and returns a small impulse to the balance. The balance swings nearly three-quarters of a turn each way, timed by a hairspring finer than a human hair. The entire escapement rides in a cage turning once a minute, cancelling gravity out.</p>
+          <ul class="spec caps"><li><b>4</b> Hz</li><li><b>290°</b> amplitude</li><li><b>0.29</b> g cage</li></ul>
+        </article>
+        <ol class="rail caps" aria-hidden="true">
+          <li data-k="1">I</li><li data-k="2">II</li><li data-k="3">III</li><li data-k="4">IV</li><li data-k="5">V</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="finishing" id="finishing" aria-label="Finishing">
+      <div class="stage">
+        <header class="fin-head" data-k="6">
+          <p class="fig caps">Finishing</p>
+          <h2>Hidden surfaces get <em>the same finish.</em></h2>
+        </header>
+        <article class="fin" data-k="6">
+          <p class="fin-n"><b>3</b><span class="caps">hours on one movement</span></p>
+          <h3>Côtes de Genève</h3>
+          <p>Stripes are drawn across each bridge with a boxwood wheel — one pass per band, lined up bridge to bridge so the pattern reads as a single sheet of metal.</p>
+        </article>
+        <article class="fin" data-k="7">
+          <p class="fin-n"><b>4,000</b><span class="caps">hand-grained circles per mainplate</span></p>
+          <h3>Perlage</h3>
+          <p>Each circle is grained into the mainplate individually with a spinning peg. Together they scatter light beautifully — and trap the dust that would otherwise reach the pivots.</p>
+        </article>
+        <article class="fin" data-k="8">
+          <p class="fin-n"><b>64</b><span class="caps">hand-cut inward angles</span></p>
+          <h3>Anglage</h3>
+          <p>Edges are filed to forty-five degrees and polished with gentian wood until each one throws a single clean line of light. No machine can cut an inward angle. AK-01 carries sixty-four of them.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="collection" id="collection" aria-label="The collection">
+      <div class="stage">
+        <header class="col-head" data-k="9">
+          <p class="fig caps">Reassembled</p>
+          <h2>Built twice. <em>Once to prove, once to keep.</em></h2>
+          <p>Every AK-01 is assembled in full, regulated in six positions over three weeks, then stripped down for final finishing — and rebuilt for the last time by the same hands that started it.</p>
+        </header>
+        <header class="refs-head" data-k="10">
+          <p class="fig caps">The collection</p>
+          <h2>Three references. <em>One heartbeat.</em></h2>
+        </header>
+        <div class="refs" data-k="10">
+          <article class="ref">
+            <p class="caps ref-n">Ref. AK-01 · N</p>
+            <h3>Midnight</h3>
+            <p>Deep navy dial, champagne-gold bridges, midnight-blue leather strap.</p>
+            <p class="price">PKR 185,000</p>
+          </article>
+          <article class="ref ref-main">
+            <p class="caps ref-n">Ref. AK-01 · G</p>
+            <h3>Sovereign</h3>
+            <p>Champagne-gold case, anthracite bridges, hand-stitched tan leather strap.</p>
+            <p class="price">PKR 215,000</p>
+          </article>
+          <article class="ref">
+            <p class="caps ref-n">Ref. AK-01 · S &nbsp;·&nbsp; 12 pieces</p>
+            <h3>Graphite</h3>
+            <p>Black DLC titanium over gold wheels, matte black calfskin strap.</p>
+            <p class="price">PKR 165,000</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="atelier" id="atelier" aria-label="The atelier">
+      <div class="stage">
+        <div class="at" data-k="11">
+          <p class="fig caps">Studio &nbsp;·&nbsp; AKCLNT, Pakistan</p>
+          <h2>Small bench. <em>Thirty-eight watches a year.</em></h2>
+          <p>Output is deliberately small. Each watch stays with one maker from the first file stroke to the final screw — signed beneath the balance bridge, where only another watchmaker will ever find it.</p>
+          <dl class="stats">
+            <div><dt>6</dt><dd class="caps">makers at the bench</dd></div>
+            <div><dt>38</dt><dd class="caps">watches a year</dd></div>
+            <div><dt>11</dt><dd class="caps">months for each one</dd></div>
+            <div><dt>420</dt><dd class="caps">hours of hand finishing</dd></div>
+          </dl>
+          <p class="bench caps">At the bench &nbsp;—&nbsp; The AKCLNT Studio team · Design · Engineering · Finishing · Assembly · Quality</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="appointment" aria-label="Appointments">
+      <div class="cta-inner" data-k="12">
+        <p class="fig caps">Private viewings &nbsp;·&nbsp; 2027 allocation opens in March</p>
+        <h2>Your AK-01 begins <em>with a conversation.</em></h2>
+        <p>Viewings are by appointment, Tuesday to Friday. Message us on WhatsApp with the reference you have in mind — we reply to every enquiry within two working days.</p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="https://wa.me/923238559822?text=Hello%20AKCLNT%20CHRONO%2C%20I%20would%20like%20to%20know%20more%20about%20the%20AK-01." data-magnetic>Request an appointment</a>
+          <a class="btn-text caps" href="#calibre">Revisit the calibre <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="chrono-gallery" id="gallery" aria-label="The AKCLNT Edit">
+      <header class="chrono-gallery-head">
+        <p class="fig caps">The AKCLNT Edit</p>
+        <h2>Navy nights. <em>Golden hours.</em></h2>
+        <p>Three frames from the AK-01 story — the movement up close, the Sovereign on the wrist, and the bench where every piece is finished by hand.</p>
+      </header>
+      <div class="chrono-gallery-grid">
+        <figure>
+          <img src="/img/chrono/midnight-macro.webp" alt="AK-01 Midnight skeleton movement in champagne gold on deep navy" loading="lazy">
+          <figcaption class="caps">Midnight · The movement, up close</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/chrono/sovereign-wrist.webp" alt="AK-01 Sovereign gold watch worn with a navy suit" loading="lazy">
+          <figcaption class="caps">Sovereign · On the wrist</figcaption>
+        </figure>
+        <figure>
+          <img src="/img/chrono/atelier-bench.webp" alt="Watchmaker assembling a gold movement at the AKCLNT bench" loading="lazy">
+          <figcaption class="caps">The Bench · Finished by hand</figcaption>
+        </figure>
+      </div>
+      <p class="chrono-gallery-cta"><a class="btn btn-solid" href="shop.html" data-magnetic>Browse the full collection</a></p>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-top">
+        <p class="foot-word">AKCLNT</p>
+        <p class="foot-line">Designed &amp; built by AKCLNT Studio, <em>Pakistan.</em></p>
+      </div>
+      <div class="foot-cols caps">
+        <p>AKCLNT CHRONO<br>By AKCLNT Studio<br>Rawalpindi, Pakistan</p>
+        <p><a href="#atelier">Atelier</a><br><a href="#collection">Collection</a><br><a href="#appointment">Service &amp; restoration</a></p>
+        <p><a href="#top">Journal</a><br><a href="#top">Press</a><br><a href="#top">Instagram</a></p>
+        <p>© 2026 AKCLNT<br>info@akclnt.com<br>akclnt.com</p>
+      </div>
+    </footer>
+  </main>
+
+  <svg class="orbit" viewBox="0 0 400 400" aria-hidden="true">
+    <defs><path id="obPath" d="M200,200 m-166,0 a166,166 0 1,1 332,0 a166,166 0 1,1 -332,0"/></defs>
+    <circle cx="200" cy="200" r="196" class="ob-c"/>
+    <g class="ob-rot"><g class="ob-ticks"></g><circle cx="200" cy="7" r="2.4" class="ob-dot"/></g>
+    <text class="ob-t"><textPath href="#obPath" startOffset="0">AKCLNT Chrono · Calibre AK-01 · Skeleton Tourbillon · 28,800 vph · 72h Reserve ·</textPath></text>
+    <path d="M4 200H40M360 200H396" class="ob-c"/>
+  </svg>
+  <div class="labels" aria-hidden="true"><svg class="leaders"></svg></div>
+  <div class="crown-hint" aria-hidden="true"><i></i><b></b><span class="caps">Hold to wind</span></div>
+  <aside class="reserve" aria-label="Power reserve">
+    <button class="reserve-btn" type="button" data-cursor="drag" data-cursor-label="Hold" aria-label="Press and hold to wind the mainspring">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="rv-track" cx="60" cy="60" r="50"/>
+        <circle class="rv-fill" cx="60" cy="60" r="50"/>
+        <g class="rv-ticks"></g>
+      </svg>
+      <span class="rv-val"><b>24</b><small>h</small></span>
+    </button>
+    <p class="rv-label caps"><span>Power reserve</span><em>Hold to wind</em></p>
+  </aside>
+  <div class="toast caps" role="status"></div>
+
+  <script type="module" src="./main.js"></script>
+
+</body>
+</html>
